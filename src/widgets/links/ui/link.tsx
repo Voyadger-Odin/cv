@@ -7,7 +7,7 @@ import { TLink } from '@/widgets/links/types';
 export const SelfLink = ({ link }: { link: TLink }) => {
   return (
     <Link
-      href={link.src}
+      href={link.href}
       target={'_blank'}
       className={cn(
         'flex flex-row gap-1 items-center w-fit',
@@ -17,7 +17,7 @@ export const SelfLink = ({ link }: { link: TLink }) => {
         link.img && 'pl-1',
       )}
     >
-      {link.img && <Image src={link.img} alt={'GitHubIcon'} className={'max-w-[20px]'} />}
+      {link.img && <Image src={link.img} alt={'icon'} className={'max-w-[20px]'} />}
       {link.label}
     </Link>
   );
