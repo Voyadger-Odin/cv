@@ -5,7 +5,6 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 import { AppProvider } from '@/app/_providers/app-provider';
-import { DarkContainer } from '@/widgets/dark';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -38,9 +37,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${jetBrainsMono.variable} antialiased`}
       >
-        <AppProvider>
-          <DarkContainer>{children}</DarkContainer>
-        </AppProvider>
+        <AppProvider>{children}</AppProvider>
       </body>
     </html>
   );
