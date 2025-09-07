@@ -8,7 +8,7 @@ import { ImageShow } from '@/widgets/image';
 export const Certificate = ({ certificate }: { certificate: TCertificate }) => {
   return (
     <div className={cn('flex flex-col gap-4 w-[400px]')}>
-      <ImageShow img={certificate.img}>
+      <ImageShow images={[certificate.img]}>
         <div className={'overflow-hidden rounded-lg'}>
           <Image
             src={certificate.img}

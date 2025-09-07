@@ -99,7 +99,7 @@ export const MainPage = () => {
           </div>
 
           {/* About */}
-          <div id={'about'} className={'flex flex-col gap-10 max-w-[800px] scroll-mt-10'}>
+          <div id={'about'} className={'flex flex-col gap-10 max-w-[900px] scroll-mt-10'}>
             <span className={'text-[60px]'}>Обо мне</span>
             <span className={'text-[30px] text-gray-200'}>Front-end разработчик</span>
 
