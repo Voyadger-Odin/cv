@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 
 import { cn } from '@/shared/lib/utils';
+import { Button } from '@/shared/ui/button';
 import { ImageShow } from '@/widgets/image';
 import { SelfLink } from '@/widgets/links';
 import { TPortfolio } from '@/widgets/portfolio/types';
@@ -82,17 +83,34 @@ export const Portfolio = ({ portfolio }: { portfolio: TPortfolio }) => {
 
       <span>{portfolio.description}</span>
 
-      <Link
-        href={portfolio.href}
-        target={'_blank'}
-        className={cn(
-          'flex flex-row gap-1 bg-white text-blackest w-fit h-fit rounded-lg px-4 py-2',
-        )}
-      >
-        <span>View demo</span>
+      <div className={'flex flex-row gap-1'}>
+        <Button variant={'default'} asChild>
+          <Link
+            href={portfolio.href}
+            target={'_blank'}
+            className={cn('flex flex-row gap-1 w-fit px-4 py-2')}
+          >
+            <span>View demo</span>
 
-        <ArrowUpRight />
-      </Link>
+            <ArrowUpRight />
+          </Link>
+        </Button>
+
+        {portfolio.links?.map((link, index) => {
+          return (
+            <Button key={index} variant={'ghost'} asChild>
+              <Link
+                href={link.href}
+                target={'_blank'}
+                className={cn('flex flex-row gap-1 w-fit px-4 py-2')}
+              >
+                <Image src={link.img} alt={'link'} />
+                <span>{link.label}</span>
+              </Link>
+            </Button>
+          );
+        })}
+      </div>
     </div>
   );
 };

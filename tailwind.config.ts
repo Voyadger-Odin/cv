@@ -62,8 +62,10 @@ const config = {
       },
     },
     fontFamily: {
+      sanFrancisco: ['var(--font-sanfrancisco)', ...fontFamily.sans],
       sans: ['var(--font-sans)', ...fontFamily.sans],
       jetbrains: ['var(--font-jetbrains-mono)', ...fontFamily.mono],
+      geist: ['var(--font-geist-sans)', ...fontFamily.sans],
     },
     // `ft-` prefix to match the Figma `ft-`igma `t-`ext styles
     // there are 3 groups: desktop, controls, mobile

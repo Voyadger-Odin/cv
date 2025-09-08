@@ -10,7 +10,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/shared/ui/carousel';
-import { TImageShow } from '@/widgets/image/types';
+import { TImageShow } from '@/widgets/image';
 
 export const ImageShow = ({ images, children }: TImageShow) => {
   const [open, setOpen] = useState(false);

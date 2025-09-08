@@ -4,4 +4,5 @@ export type TCertificate = {
   img: string | StaticImport;
   title: string;
   href: string;
+  certificateNumber?: string;
 };

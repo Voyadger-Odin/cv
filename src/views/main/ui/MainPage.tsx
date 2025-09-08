@@ -43,18 +43,27 @@ export const MainPage = () => {
     <div
       className={cn(
         'relative flex flex-col w-full items-center',
-        'text-white font-jetbrains',
+        'text-white font-sanFrancisco',
         'min-h-[100vh] p-10',
       )}
     >
       {/* Background */}
       <div
-        className={cn('absolute top-0 left-0 w-[100%] h-[100%] z-[1]', 'bg-red-500')}
+        className={cn('absolute top-0 left-0 w-[100%] h-[100vh] z-[1]')}
         style={{
-          background: 'radial-gradient(at center top, #094074, #000000)',
-          opacity: '30%',
+          maskImage: 'radial-gradient(100vh at 50% 0%,black 0,transparent 100%)',
+          maskSize: '100% 100%',
         }}
-      />
+      >
+        <div
+          className={'w-full h-full'}
+          style={{
+            backgroundImage: 'radial-gradient(#094074 1px, #000000 1px)',
+            backgroundSize: '0.125rem 0.125rem',
+            opacity: '30%',
+          }}
+        />
+      </div>
 
       <div className={'w-full flex flex-col items-center z-[10]'}>
         <div
@@ -110,10 +119,21 @@ export const MainPage = () => {
             </div>
 
             <span>
-              Selene is a Jakarta-based design engineer with a passion for transforming
-              complex challenges into simple, elegant design solutions. Her work spans
-              digital interfaces, interactive experiences, and the convergence of design
-              and technology.
+              Высшее образование по специальности Прикладная информатика (ЮФУ) Имею
+              несколько лет опыта коммерческой разработки, а также работе на фрилансе.
+              Имею экспертизу как во frontend, так и с backend. Достижения: - Подключил
+              платёжную систему к сайту благотворительной организации - Починил и
+              оптимизировал сайт частной больницы - Участвовал в разработке с 0 для
+              крупного бренда косметики - Настроил CI/CD для проекта, что сильно увеличило
+              скорость разработке и уменьшило количество ошибок при деплое - Занимаюсь
+              просветительной деятельностью (выступаю на внутренних митапах) FrontEnd:
+              Работаю на фреймворках React и VueJs, пишу на JavaScript/TypeScript.
+              Использую ESLint и Prettier для чистоты кода. Оформляю стили с Tailwind,
+              css3, scss. Использую i18n для мультиязычности BackEnd: пишу на PHP
+              (Laravel), но также есть опыт с 1c-bitrix, node.js, python (Flask). MySQL,
+              PostgreSQL, Redis, MongoDB - умею оптимизировать запросы к БД. Есть
+              экспертиза в настройке VPS и VDS серверов, настройке доменных имён,
+              Nginx/Apache. Настройка CI/CD и docker/docker-compose
             </span>
 
             {/* Образование */}
@@ -139,15 +159,19 @@ export const MainPage = () => {
 
             {/* Технологии */}
             <Section title={'Технологии'} id={'technologies'}>
-              <SkillList label={'Техничекие'} skills={SKILLS.TECHNICAL} />
-              <SkillList label={'Техничекие'} skills={SKILLS.TECHNICAL} />
+              <SkillList label={'Front-end'} skills={SKILLS.FRONTEND} />
+              <SkillList label={'DevOps'} skills={SKILLS.DevOps} />
+              <SkillList label={'Базы данных'} skills={SKILLS.DB} />
+              <SkillList label={'Софт скилы'} skills={SKILLS.SOFTSKILLS} />
             </Section>
 
             {/* Сертификаты */}
             <Section title={'Сертификаты'} id={'certificates'}>
-              {CERTIFICATES.map((certificate, index) => {
-                return <Certificate key={index} certificate={certificate} />;
-              })}
+              <div className={'grid grid-cols-2 gap-4'}>
+                {CERTIFICATES.map((certificate, index) => {
+                  return <Certificate key={index} certificate={certificate} />;
+                })}
+              </div>
             </Section>
           </div>
         </div>

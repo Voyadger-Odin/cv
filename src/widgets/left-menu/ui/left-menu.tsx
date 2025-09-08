@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 import { cn } from '@/shared/lib/utils';
-import { TLeftMenu } from '@/widgets/left-menu/types';
+import { TLeftMenu } from '@/widgets/left-menu';
 
 export const LeftMenu = ({ menu }: { menu: TLeftMenu }) => {
   return (

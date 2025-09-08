@@ -21,6 +21,11 @@ const jetBrainsMono = localFont({
   variable: '--font-jetbrains-mono',
   weight: '100 900',
 });
+const SanFrancisco = localFont({
+  src: './fonts/SanFrancisco/SFUIText-Regular.woff',
+  variable: '--font-sanfrancisco',
+  weight: '100 900',
+});
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -35,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${jetBrainsMono.variable} antialiased`}
+        className={`${SanFrancisco.variable} ${geistSans.variable} ${geistMono.variable} ${jetBrainsMono.variable} antialiased`}
       >
         <AppProvider>{children}</AppProvider>
       </body>
