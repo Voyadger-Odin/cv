@@ -7,7 +7,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function getEnvironment() {
+export function getEnvironment(): 'development' | 'github' | 'production' | string {
   // Client
   if (typeof window !== 'undefined') {
     const hostname = window.location.hostname;
