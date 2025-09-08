@@ -6,7 +6,9 @@ import TelegramIcon from '@/shared/ui/icons/telegram.svg';
 import Cert2 from '@/views/main/img/certificates/921e044bf8de26d19c7e74acaf933cfe0e63ad5e.png';
 import BitrixDeveloper from '@/views/main/img/certificates/bitrix-developer.png';
 import Cert1 from '@/views/main/img/certificates/f3dec1928f7c24ffe710367d0998633036643053.png';
-import Mendeleev from '@/views/main/img/Mendeleev.png';
+import Mendeleev1 from '@/views/main/img/portfolio/Mendeleev/Mendeleev-1.png';
+import Mendeleev2 from '@/views/main/img/portfolio/Mendeleev/Mendeleev-2.png';
+import Mendeleev3 from '@/views/main/img/portfolio/Mendeleev/Mendeleev-3.png';
 import SFEDU from '@/views/main/img/sfedu.png';
 import Askaron from '@/views/main/img/work/askaron.png';
 import Axenix from '@/views/main/img/work/axenix.jpg';
@@ -80,7 +82,8 @@ export const WORKS: TWork[] = [
       'Оптимизация и доработка аналитических дешбордов металлургического комбината',
       'Создание сайта агрохолдинга',
     ],
-    description: '',
+    description:
+      'Достижения на работе: активно участвую в жизни компании, помогаю в разработке собственных проектов компании, таких как UI KIT. Выступаю на внутренних митапах для сотрудников, а также принимаю участия в спортивных мероприятиях (забеги, волейбол)',
   },
   {
     img: Askaron,
@@ -89,24 +92,10 @@ export const WORKS: TWork[] = [
     jobTitle: 'Web разработчик',
     time: 'Октябрь 2022 — Июль 2023',
     items: [
-      'Создания сайта с нуля до продакшена для крупного ретейла косметики',
-      'Техническая поддержка крупного поставщика строительных материалов',
-      'Оптимизация и доработка аналитических дешбордов металлургического комбината',
-      'Создание сайта агрохолдинга',
-    ],
-    description: '',
-  },
-  {
-    img: Yandex,
-    jobLink: 'https://oggetto.ru/',
-    name: 'Yandex',
-    jobTitle: 'Web разработчик',
-    time: 'Август 2022 — Октябрь 2022',
-    items: [
-      'Создания сайта с нуля до продакшена для крупного ретейла косметики',
-      'Техническая поддержка крупного поставщика строительных материалов',
-      'Оптимизация и доработка аналитических дешбордов металлургического комбината',
-      'Создание сайта агрохолдинга',
+      'Освоил разработку на bitrix-framework',
+      'Разработал сайт интернет-магазин строительной компании',
+      'Разработал сайт благотворительной организации',
+      'Подключил платёжную систему PayAnyWay',
     ],
     description: '',
   },
@@ -116,12 +105,7 @@ export const WORKS: TWork[] = [
     name: 'Oggetto',
     jobTitle: 'Web разработчик',
     time: 'Ноябрь 2021 — Август 2022',
-    items: [
-      'Создания сайта с нуля до продакшена для крупного ретейла косметики',
-      'Техническая поддержка крупного поставщика строительных материалов',
-      'Оптимизация и доработка аналитических дешбордов металлургического комбината',
-      'Создание сайта агрохолдинга',
-    ],
+    items: ['Создал внутренний портал для сотрудников'],
     description: '',
   },
 ];
@@ -130,7 +114,7 @@ export const PORTFOLIO: TPortfolio[] = [
   {
     title: 'Таблица Менделеева',
     href: 'https://voyadger-odin.github.io/MendeleevTable/',
-    img: Mendeleev,
+    images: [Mendeleev1, Mendeleev2, Mendeleev3],
     description:
       'Интерактивная таблица Менделеева — это современный веб-ресурс, сочетающий науку и технологии. Сайт позволяет детально изучать химические элементы с возможностью просмотра расширенной информации по каждому из них. Пользователи могут персонализировать отображение таблицы: выбирать стиль оформления, изменять температурные состояния элементов и переключать язык интерфейса. Удобная функция экспорта в PDF позволяет распечатать таблицу с текущими настройками — идеально для учёбы, преподавания и личного пользования.',
     links: [
@@ -161,6 +145,10 @@ export const SKILLS: TSkillsList = {
     'Tailwind',
     'Shad CN',
     'VueJS',
+    'ESLint',
+    'Prettier',
+    'i18n',
+    'Storybook',
   ],
   DevOps: ['Linux', 'CI/CD', 'GitLab CI', 'Nginx', 'Docker', 'Docker-compose'],
   DB: ['SQL', 'MySQL', 'PostgreSQL', 'Redis'],

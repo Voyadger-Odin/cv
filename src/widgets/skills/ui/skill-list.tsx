@@ -8,7 +8,7 @@ interface SkillListProps {
 export const SkillList = ({ label, skills }: SkillListProps) => {
   return (
     <div className={'flex flex-col gap-1'}>
-      <span>{label}</span>
+      <span className={'text-[18px]'}>{label}</span>
 
       <div className={'flex flex-row flex-wrap gap-1'}>
         {skills.map((skill, index) => (

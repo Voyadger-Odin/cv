@@ -3,7 +3,7 @@
 import { ReactNode } from 'react';
 import Image from 'next/image';
 
-import { cn } from '@/shared/lib/utils';
+import { cn, getEnvironment } from '@/shared/lib/utils';
 import {
   CERTIFICATES,
   EDUCATION,
@@ -12,7 +12,7 @@ import {
   SKILLS,
   WORKS,
 } from '@/views/main/data/data';
-import Photo from '@/views/main/img/img.png';
+import Photo from '@/views/main/img/me.png';
 import { Certificate } from '@/widgets/certificate';
 import { Education } from '@/widgets/education';
 import { LeftMenu } from '@/widgets/left-menu';
@@ -39,6 +39,8 @@ const Section = ({ title, id, children }: SectionProps) => {
 };
 
 export const MainPage = () => {
+  const env = getEnvironment();
+
   return (
     <div
       className={cn(
@@ -77,6 +79,7 @@ export const MainPage = () => {
 
         <div className={'sticky top-0 z-[1] w-full'}>
           <TopMenu />
+          {env}
         </div>
 
         <div className={'fixed left-10 top-1/2 -translate-y-1/2'}>
@@ -108,33 +111,42 @@ export const MainPage = () => {
           </div>
 
           {/* About */}
-          <div id={'about'} className={'flex flex-col gap-10 max-w-[900px] scroll-mt-10'}>
-            <span className={'text-[60px]'}>Обо мне</span>
-            <span className={'text-[30px] text-gray-200'}>Front-end разработчик</span>
+          <div className={'flex flex-col gap-10 max-w-[900px] scroll-mt-10'}>
+            {/* About */}
+            <Section title={'Обо мне'} id={'about'}>
+              <span className={'text-[30px] text-gray-200'}>Front-end разработчик</span>
 
-            <div className={'flex flex-row gap-2'}>
-              {LINKS.map((link, index) => (
-                <SelfLink key={index} link={link} />
-              ))}
-            </div>
+              <div className={'flex flex-row gap-2'}>
+                {LINKS.map((link, index) => (
+                  <SelfLink key={index} link={link} />
+                ))}
+              </div>
 
-            <span>
-              Высшее образование по специальности Прикладная информатика (ЮФУ) Имею
-              несколько лет опыта коммерческой разработки, а также работе на фрилансе.
-              Имею экспертизу как во frontend, так и с backend. Достижения: - Подключил
-              платёжную систему к сайту благотворительной организации - Починил и
-              оптимизировал сайт частной больницы - Участвовал в разработке с 0 для
-              крупного бренда косметики - Настроил CI/CD для проекта, что сильно увеличило
-              скорость разработке и уменьшило количество ошибок при деплое - Занимаюсь
-              просветительной деятельностью (выступаю на внутренних митапах) FrontEnd:
-              Работаю на фреймворках React и VueJs, пишу на JavaScript/TypeScript.
-              Использую ESLint и Prettier для чистоты кода. Оформляю стили с Tailwind,
-              css3, scss. Использую i18n для мультиязычности BackEnd: пишу на PHP
-              (Laravel), но также есть опыт с 1c-bitrix, node.js, python (Flask). MySQL,
-              PostgreSQL, Redis, MongoDB - умею оптимизировать запросы к БД. Есть
-              экспертиза в настройке VPS и VDS серверов, настройке доменных имён,
-              Nginx/Apache. Настройка CI/CD и docker/docker-compose
-            </span>
+              <div className={'flex flex-col gap-4'}>
+                <p>
+                  Frontend-разработчик с многолетним опытом коммерческой разработки и
+                  фриланса, обладающий глубокой экспертизой в создании масштабируемых и
+                  производительных веб-приложений. Уверенно работаю с React и Vue.js, пишу
+                  чистый и поддерживаемый код на JavaScript и TypeScript, активно
+                  использую ESLint, Prettier, Tailwind CSS, SCSS и CSS3. Опыт внедрения
+                  i18n для мультиязычных решений. Участвовал в полном цикле разработки —
+                  от старта проекта с нуля до оптимизации и поддержки крупных сервисов.
+                  Имею успешные кейсы интеграции платёжных систем, рефакторинга и
+                  ускорения существующих сайтов.
+                </p>
+                <p>
+                  Благодаря бэкенд-опыту (Laravel, Node.js, Python) эффективно
+                  взаимодействую с серверной частью, понимаю архитектуру приложений и
+                  особенности интеграций. Владею настройкой CI/CD, Docker, серверов и
+                  доменов — это позволяет быстро запускать и доставлять решения в
+                  продакшн.
+                </p>
+                <p>
+                  Активно выступаю с докладами на внутренних митапах, делюсь знаниями с
+                  командой, а также принимаю участие в различных спортивных мероприятиях.
+                </p>
+              </div>
+            </Section>
 
             {/* Образование */}
             <Section title={'Образование'} id={'education'}>
@@ -159,7 +171,7 @@ export const MainPage = () => {
 
             {/* Технологии */}
             <Section title={'Технологии'} id={'technologies'}>
-              <SkillList label={'Front-end'} skills={SKILLS.FRONTEND} />
+              <SkillList label={'FrontEnd'} skills={SKILLS.FRONTEND} />
               <SkillList label={'DevOps'} skills={SKILLS.DevOps} />
               <SkillList label={'Базы данных'} skills={SKILLS.DB} />
               <SkillList label={'Софт скилы'} skills={SKILLS.SOFTSKILLS} />

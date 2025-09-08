@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -11,30 +11,38 @@ import { SelfLink } from '@/widgets/links';
 import { TPortfolio } from '@/widgets/portfolio/types';
 
 interface ImagesGroupProps {
-  img: string | StaticImport;
+  images: (string | StaticImport)[];
 }
-const ImagesGroup = ({ img }: ImagesGroupProps) => {
+const ImagesGroup = ({ images }: ImagesGroupProps) => {
   const [hovered, setHovered] = useState(false);
-  const count = 3;
 
-  const getRotate = (index: number) => {
-    if (index === count - 1) {
-      return hovered ? 2 : 0;
-    }
-    return -(hovered ? 4 : 2) * (count - index - 1);
-  };
+  const getRotate = useCallback(
+    (index: number) => {
+      if (index === images.length - 1) {
+        return hovered ? 2 : 0;
+      }
+      return -(hovered ? 4 : 2) * (images.length - index - 1);
+    },
+    [hovered],
+  );
 
-  const getTranslateX = (index: number) => {
-    return -(hovered ? 100 : 40) * (count - index - 1);
-  };
+  const getTranslateX = useCallback(
+    (index: number) => {
+      return -(hovered ? 100 : 40) * (images.length - index - 1);
+    },
+    [hovered],
+  );
 
-  const getTranslateY = (index: number) => {
-    return -(hovered ? 50 : 30) * (count - index - 1);
-  };
+  const getTranslateY = useCallback(
+    (index: number) => {
+      return -(hovered ? 50 : 30) * (images.length - index - 1);
+    },
+    [hovered],
+  );
 
-  const getSale = () => {
+  const getSale = useCallback(() => {
     return hovered ? 1.05 : 1;
-  };
+  }, [hovered]);
 
   return (
     <div
@@ -46,11 +54,11 @@ const ImagesGroup = ({ img }: ImagesGroupProps) => {
         setHovered(false);
       }}
     >
-      {Array.from({ length: count }, (_, index) => index + 1).map((_, index) => {
+      {images.map((_, index) => {
         return (
           <Image
             key={index}
-            src={img}
+            src={images[images.length - index - 1]}
             alt={'img'}
             width={1000}
             height={1000}
@@ -75,9 +83,9 @@ export const Portfolio = ({ portfolio }: { portfolio: TPortfolio }) => {
     <div className={'flex flex-col gap-4'}>
       <span className={'text-[25px]'}>{portfolio.title}</span>
 
-      <ImageShow images={[portfolio.img, portfolio.img, portfolio.img]}>
+      <ImageShow images={portfolio.images}>
         <div className={'flex flex-row w-full h-[400px] relative'}>
-          <ImagesGroup img={portfolio.img} />
+          <ImagesGroup images={portfolio.images} />
         </div>
       </ImageShow>
 

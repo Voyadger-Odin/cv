@@ -5,7 +5,7 @@ import { TLink } from '@/widgets/links';
 export type TPortfolio = {
   title: string;
   href: string;
-  img: string | StaticImport;
+  images: (string | StaticImport)[];
   description?: string;
   links?: TLink[];
 };
