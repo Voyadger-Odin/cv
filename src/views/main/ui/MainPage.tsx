@@ -77,10 +77,11 @@ export const MainPage = () => {
           }}
         />
 
-        <div className={'sticky top-0 z-[1] w-full'}>
-          <TopMenu />
-          {env}
-        </div>
+        {env === 'development' && (
+          <div className={'sticky top-0 z-[1] w-full'}>
+            <TopMenu />
+          </div>
+        )}
 
         <div className={'fixed left-10 top-1/2 -translate-y-1/2'}>
           <LeftMenu
