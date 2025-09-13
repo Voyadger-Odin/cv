@@ -1,18 +1,15 @@
 import { ReactNode } from 'react';
 
-import { cn, getEnvironment } from '@/shared/lib/utils';
+import { cn } from '@/shared/lib/utils';
 import HomeIcon from '@/shared/ui/icons/home.svg';
 import MarkIcon from '@/shared/ui/icons/mark.svg';
 import PersonIcon from '@/shared/ui/icons/person.svg';
 import SunIcon from '@/shared/ui/icons/sun.svg';
 import WorkIcon from '@/shared/ui/icons/work.svg';
 import { Toaster } from '@/shared/ui/sonner';
-import { LeftMenu } from '@/widgets/left-menu';
 import { Separator, TopMenu, TopMenuButton } from '@/widgets/top-menu';
 
 export default function PublicLayout({ children }: { children: ReactNode }) {
-  const env = getEnvironment();
-
   return (
     <div className={'bg-blackest text-white'}>
       <main className={cn('w-full h-full')}>
@@ -51,19 +48,17 @@ export default function PublicLayout({ children }: { children: ReactNode }) {
               }}
             />
 
-            {env === 'development' && (
-              <div className={'sticky top-0 z-[1] w-full'}>
-                <TopMenu>
-                  <TopMenuButton img={HomeIcon} href={'/'} />
-                  <Separator />
-                  <TopMenuButton label={'Обо мне'} img={PersonIcon} active={true} />
-                  <TopMenuButton label={'Работы'} img={WorkIcon} />
-                  <TopMenuButton label={'Достижения'} img={MarkIcon} />
-                  <Separator />
-                  <TopMenuButton img={SunIcon} />
-                </TopMenu>
-              </div>
-            )}
+            <div className={'sticky top-0 z-[1] w-full'}>
+              <TopMenu>
+                <TopMenuButton img={HomeIcon} href={'/'} />
+                <Separator />
+                <TopMenuButton label={'Обо мне'} img={PersonIcon} active={true} />
+                <TopMenuButton label={'Работы'} img={WorkIcon} />
+                <TopMenuButton label={'Достижения'} img={MarkIcon} />
+                <Separator />
+                <TopMenuButton img={SunIcon} />
+              </TopMenu>
+            </div>
 
             <div>{children}</div>
           </div>
