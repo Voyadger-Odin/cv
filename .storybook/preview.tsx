@@ -7,7 +7,7 @@ import type { ReactNode } from 'react';
 
 import '../src/app/globals.css';
 
-import { cn } from '@/shared/lib/utils'; // replace with the name of your tailwind css file
+import { cn } from '../src/shared/lib/utils'; // replace with the name of your tailwind css file
 
 // Monserrat font is still used from https://fonts.google.com/specimen/Montserrat
 // See the preview-head.html for more details

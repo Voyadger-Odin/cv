@@ -22,7 +22,45 @@ const jetBrainsMono = localFont({
   weight: '100 900',
 });
 const SanFrancisco = localFont({
-  src: './fonts/SanFrancisco/SFUIText-Regular.woff',
+  // src: './fonts/SanFrancisco/SFUIText-Regular.woff',
+  src: [
+    {
+      path: './fonts/SanFrancisco/SFUIDisplay-Thin.woff',
+      weight: '100',
+    },
+    {
+      path: './fonts/SanFrancisco/SFUIDisplay-Ultralight.woff',
+      weight: '200',
+    },
+    {
+      path: './fonts/SanFrancisco/SFUIText-Light.woff',
+      weight: '300',
+    },
+    {
+      path: './fonts/SanFrancisco/SFUIText-Regular.woff',
+      weight: '400',
+    },
+    {
+      path: './fonts/SanFrancisco/SFUIText-Medium.woff',
+      weight: '500',
+    },
+    {
+      path: './fonts/SanFrancisco/SFUIText-Semibold.woff',
+      weight: '600',
+    },
+    {
+      path: './fonts/SanFrancisco/SFUIText-Bold.woff',
+      weight: '700',
+    },
+    {
+      path: './fonts/SanFrancisco/SFUIText-Heavy.woff',
+      weight: '800',
+    },
+    {
+      path: './fonts/SanFrancisco/SFUIDisplay-Black.woff',
+      weight: '900',
+    },
+  ],
   variable: '--font-sanfrancisco',
   weight: '100 900',
 });
