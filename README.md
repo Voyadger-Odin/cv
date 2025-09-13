@@ -1,1 +1,1 @@
-https://stepik.org/cert/2925677
+[https://voyadger-odin.github.io/cv/](Ссылка на портфолио)

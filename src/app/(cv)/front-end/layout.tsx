@@ -52,10 +52,11 @@ export default function PublicLayout({ children }: { children: ReactNode }) {
             />
 
             {env === 'development' && (
-              <div className={'sticky top-0 z-[10] w-full'}>
+              <div className={'sticky top-0 z-[1] w-full'}>
                 <TopMenu>
-                  <TopMenuButton img={HomeIcon} href={'/'} active={true} />
+                  <TopMenuButton img={HomeIcon} href={'/'} />
                   <Separator />
+                  <TopMenuButton label={'Обо мне'} img={PersonIcon} active={true} />
                   <TopMenuButton label={'Работы'} img={WorkIcon} />
                   <TopMenuButton label={'Достижения'} img={MarkIcon} />
                   <Separator />
@@ -64,7 +65,7 @@ export default function PublicLayout({ children }: { children: ReactNode }) {
               </div>
             )}
 
-            <div className={'max-w-[1200px]'}>{children}</div>
+            <div>{children}</div>
           </div>
         </div>
       </main>

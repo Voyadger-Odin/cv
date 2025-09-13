@@ -15,7 +15,7 @@ export const LeftMenu = ({ menu }: { menu: TLeftMenu }) => {
               'flex flex-row gap-4 items-center',
               'cursor-pointer hover:translate-x-1',
               'transition duration-100',
-              'text-[20px]',
+              'text-[16px] font-medium',
             )}
           >
             <div className={'w-[20px] h-px bg-gray-600'} />

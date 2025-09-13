@@ -1,24 +1,57 @@
+import { getEnvironment } from '@/shared/lib/utils';
 import GitHubIcon from '@/shared/ui/icons/github.svg';
 import GitLabIcon from '@/shared/ui/icons/gitlab.svg';
 import HHIcon from '@/shared/ui/icons/hh_mono.png';
 import MailIcon from '@/shared/ui/icons/mail.svg';
 import TelegramIcon from '@/shared/ui/icons/telegram.svg';
-import Cert2 from '@/views/main/img/certificates/921e044bf8de26d19c7e74acaf933cfe0e63ad5e.png';
-import BitrixDeveloper from '@/views/main/img/certificates/bitrix-developer.png';
-import Cert1 from '@/views/main/img/certificates/f3dec1928f7c24ffe710367d0998633036643053.png';
-import Mendeleev1 from '@/views/main/img/portfolio/Mendeleev/Mendeleev-1.png';
-import Mendeleev2 from '@/views/main/img/portfolio/Mendeleev/Mendeleev-2.png';
-import Mendeleev3 from '@/views/main/img/portfolio/Mendeleev/Mendeleev-3.png';
-import SFEDU from '@/views/main/img/sfedu.png';
-import Askaron from '@/views/main/img/work/askaron.png';
-import Axenix from '@/views/main/img/work/axenix.jpg';
-import Oggetto from '@/views/main/img/work/oggetto.png';
-import Yandex from '@/views/main/img/work/yandex.png';
+import Cert2 from '@/shared/ui/img/certificates/921e044bf8de26d19c7e74acaf933cfe0e63ad5e.png';
+import BitrixDeveloper from '@/shared/ui/img/certificates/bitrix-developer.png';
+import Cert1 from '@/shared/ui/img/certificates/f3dec1928f7c24ffe710367d0998633036643053.png';
+import Mendeleev1 from '@/shared/ui/img/portfolio/Mendeleev/Mendeleev-1.png';
+import Mendeleev2 from '@/shared/ui/img/portfolio/Mendeleev/Mendeleev-2.png';
+import Mendeleev3 from '@/shared/ui/img/portfolio/Mendeleev/Mendeleev-3.png';
+import SFEDU from '@/shared/ui/img/sfedu.png';
+import Askaron from '@/shared/ui/img/work/askaron.png';
+import Axenix from '@/shared/ui/img/work/axenix.jpg';
+import Oggetto from '@/shared/ui/img/work/oggetto.png';
+// eslint-disable-next-line boundaries/element-types
 import { TCertificate } from '@/widgets/certificate';
+// eslint-disable-next-line boundaries/element-types
 import { TEducation } from '@/widgets/education';
+// eslint-disable-next-line boundaries/element-types
 import { TLink } from '@/widgets/links';
+// eslint-disable-next-line boundaries/element-types
 import { TPortfolio } from '@/widgets/portfolio';
+// eslint-disable-next-line boundaries/element-types
 import { TWork } from '@/widgets/work';
+
+const env = getEnvironment();
+
+export interface ICV {
+  title: string;
+  description: string;
+  href: string;
+  disable?: boolean;
+}
+export const CVS: ICV[] = [
+  {
+    title: 'Front-end',
+    description: 'Мой опыт во front-end разработке',
+    href: '/front-end',
+  },
+  {
+    title: 'Back-end',
+    description: 'Мой опыт во back-end разработке',
+    href: '/front-end',
+    disable: env !== 'development',
+  },
+  {
+    title: 'Биоинженер, биоинформатик, нейробиолог',
+    description: 'Мои научные навыки',
+    href: '/front-end',
+    disable: env !== 'development',
+  },
+];
 
 export const EDUCATION: TEducation[] = [
   {

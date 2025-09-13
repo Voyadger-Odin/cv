@@ -24,6 +24,7 @@ const config = {
       lg: '16px',
       xl: '24px',
       '2xl': '40px',
+      ultra: '100px',
     },
     listStyleType: {
       dash: '"– "',
@@ -167,8 +168,6 @@ const config = {
       auto: 'auto',
       square: '1 / 1',
       banner: '16 / 6',
-      'banner-mobile': '3 / 4',
-      'product-media': '6 / 7',
     },
     borderRadius: {
       none: '0px',
@@ -443,6 +442,29 @@ const config = {
           '0%,70%,100%': { opacity: '1' },
           '20%,50%': { opacity: '0' },
         },
+        // Show page
+        'page-load': {
+          to: {
+            '-webkit-mask-size': '200% 200%',
+            maskSize: '700% 700%',
+          },
+        },
+        'page-load-blur': {
+          '0%': {
+            opacity: '100%',
+          },
+          '100%': {
+            opacity: '0%',
+          },
+        },
+        'element-up': {
+          '0%': {
+            transform: 'scale(0.95)',
+          },
+          '100%': {
+            transform: 'scale(1)',
+          },
+        },
       },
       animation: {
         'spin-slow': 'spin 15s linear infinite',
@@ -453,6 +475,9 @@ const config = {
         'slide-out-to-right': 'slide-out-to-right 0.150s ease-in forwards',
         'slide-in-from-left': 'slide-in-from-left 0.150s ease-out forwards',
         'slide-out-to-left': 'slide-out-to-left 0.150s ease-in forwards',
+        'page-load': 'page-load  1.8s ease-in forwards',
+        'page-load-blur': 'page-load-blur  1.5s cubic-bezier(.42,0,.58,1) forwards',
+        'element-up': 'element-up  1.5s cubic-bezier(.42,0,.58,1) forwards',
       },
     },
   },
